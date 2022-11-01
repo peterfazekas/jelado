@@ -5,6 +5,7 @@ import hu.transponder.model.service.Console;
 import hu.transponder.model.service.DataApi;
 import hu.transponder.model.service.DataParser;
 import hu.transponder.model.service.FileReader;
+import hu.transponder.model.service.FileWriter;
 
 import java.util.Scanner;
 
@@ -12,11 +13,13 @@ public class App {
     
     private final SignalService service;
     private final Console console;
+    private final FileWriter writer;
     
     private App() {
         var dataApi = new DataApi(new FileReader(), new DataParser());
         service = new SignalService(dataApi.getData("jel.txt"));
         console = new Console(new Scanner(System.in));
+        writer = new FileWriter("kimaradt.txt");
     }
 
     public static void main(String[] args) {
@@ -34,5 +37,6 @@ public class App {
         System.out.println(service.getBoundingRectangleCoordinates());
         System.out.println("6. feladat");
         System.out.printf("Elmozdulás: %.3f egység\n", service.getTotalDistance());
+        writer.writeAll(service.getMissedSignals());
     }
 }

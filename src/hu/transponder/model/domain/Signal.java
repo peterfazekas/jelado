@@ -25,7 +25,7 @@ public class Signal {
     }
 
     public String getCoordinate() {
-        return coordinate.printCoordinate();
+        return coordinate.printFormattedCoordinate();
     }
 
     public Time getTime() {
@@ -38,5 +38,13 @@ public class Signal {
 
     public double distance(Signal otherSignal) {
         return coordinate.distance(otherSignal.coordinate);
+    }
+
+    public int tenUnitDistanceCount(Signal otherSignal) {
+        return coordinate.tenUnitDistanceCount(otherSignal.coordinate);
+    }
+
+    public int fiveMinutesCount(Signal otherSignal) {
+        return time.fiveMinutesCount(otherSignal.time);
     }
 }

@@ -12,24 +12,17 @@ public class Time {
         this.second = second;
     }
 
-    public int getHour() {
-        return hour;
-    }
-
-    public int getMinute() {
-        return minute;
-    }
-
-    public int getSecond() {
-        return second;
-    }
-
     private int toSeconds() {
         return hour * 60 * 60 + minute * 60 + second;
     }
 
     public String diff(Time otherTime) {
-        return eltelt(otherTime).toString();
+        return toTime(eltelt(otherTime)).printFormattedTime();
+    }
+
+    public int fiveMinutesCount(Time otherTime) {
+        int secondsSpent = eltelt(otherTime);
+        return secondsSpent > 300 ? (secondsSpent - 1) / 300 : 0;
     }
 
     public Time toTime(int seconds) {
@@ -39,12 +32,16 @@ public class Time {
         return new Time(hour, minute, second);
     }
 
-    private Time eltelt(Time otherTime) {
-        return toTime(Math.abs(this.toSeconds() - otherTime.toSeconds()));
+    private int eltelt(Time otherTime) {
+        return Math.abs(this.toSeconds() - otherTime.toSeconds());
+    }
+
+    public String printFormattedTime() {
+        return String.format("%02d:%02d:%02d", hour, minute, second);
     }
 
     @Override
     public String toString() {
-        return String.format("%02d:%02d:%02d", hour, minute, second);
+        return hour + " " + minute + " " + second;
     }
 }

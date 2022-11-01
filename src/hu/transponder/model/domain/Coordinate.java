@@ -22,7 +22,14 @@ public class Coordinate {
         return Math.sqrt(Math.pow(x - otherCoordinate.getX(), 2) + Math.pow(y - otherCoordinate.getY(), 2));
     }
 
-    public String printCoordinate() {
+    public int tenUnitDistanceCount(Coordinate otherCoordinate) {
+        int diffX = Math.abs(this.x - otherCoordinate.getX());
+        int diffY = Math.abs(this.y - otherCoordinate.getY());
+        int diffMax = Math.max(diffX, diffY);
+        return diffMax > 10 ? (diffMax - 1) / 10 : 0;
+    }
+
+    public String printFormattedCoordinate() {
         return String.format("x=%d y=%d", x, y);
     }
     @Override
