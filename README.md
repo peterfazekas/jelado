@@ -62,7 +62,7 @@ esetben az ékezetmentes kiírás is elfogadott.
    a jeladó két pozíciója közötti elmozdulása a pozíciókat összekötő egyenes mentén történt.
    Az összeget három tizedes pontossággal jelenítse meg! A kiírásnál a tizedesvessző és
    tizedespont kiírása is elfogadott. Az i-edik és az i+1-edik pontok távolságát a
-   $\sqrt{(x<sub>i</sub> - x<sub>i+1</sub>)^2+(y<sub>i</sub> - y<sub>i+1</sub>)^2$ képlet segítségével határozhatja meg.
+   $\sqrt{(x<sub>i</sub> - x<sub>i+1</sub>)^2+(y<sub>i</sub> - y<sub>i+1</sub>)^2}$ képlet segítségével határozhatja meg.
 7. Írja a kimaradt.txt fájlba a kimaradt észlelésekkel kapcsolatos adatokat! A kimeneti
    fájlban azok a bemeneti állományban rögzített vételi időpontok jelenjenek meg, amelyek
    előtt közvetlenül egy vagy több észlelés kimaradt! Az időpont mellett – a mintának
