@@ -26,12 +26,13 @@ public class Coordinate {
         int diffX = Math.abs(this.x - otherCoordinate.getX());
         int diffY = Math.abs(this.y - otherCoordinate.getY());
         int diffMax = Math.max(diffX, diffY);
-        return diffMax > 10 ? (diffMax - 1) / 10 : 0;
+        return (diffMax - 1) / 10;
     }
 
     public String printFormattedCoordinate() {
         return String.format("x=%d y=%d", x, y);
     }
+
     @Override
     public String toString() {
         return x + " " + y;

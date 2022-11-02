@@ -21,8 +21,7 @@ public class Time {
     }
 
     public int fiveMinutesCount(Time otherTime) {
-        int secondsSpent = eltelt(otherTime);
-        return secondsSpent > 300 ? (secondsSpent - 1) / 300 : 0;
+        return (eltelt(otherTime) - 1) / 300;
     }
 
     public Time toTime(int seconds) {
